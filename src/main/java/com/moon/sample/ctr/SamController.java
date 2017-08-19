@@ -2,8 +2,9 @@ package com.moon.sample.ctr;
 
 import com.moon.sample.mapper.ComMapper;
 import com.moon.sample.persistent.BoardRepository;
+import com.moon.sample.persistent.UserRepository;
 import com.moon.sample.vo.Board;
-import com.moon.sample.vo.Useres;
+import com.moon.sample.vo.Users;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.log4j.Logger;
@@ -26,6 +27,8 @@ public class SamController {
     @Autowired
     BoardRepository boardRepository;
 
+    //@Autowired UserRepository userRepository;
+
     @Resource(name="ComMapper")
     private ComMapper comMapper;
 
@@ -38,9 +41,12 @@ public class SamController {
 
     @ApiOperation(value = "유저만들기",notes = "스웨거 Vo 샘플적용")
     @RequestMapping(value = "createUser",method = RequestMethod.POST)
-    public String userInsert(@RequestBody Useres useres){
+    public String userInsert(@RequestBody Users useres){
 
-        logger.info("전달된 값은 : "+useres.toString());
+       // userRepository.save(new Users("001","심성보","apple"));
+       // userRepository.save(new Users("001","심성보","apple"));
+        //userRepository.save(new Users("001","심성보","apple"));
+
         return "users Createve";
     }
 

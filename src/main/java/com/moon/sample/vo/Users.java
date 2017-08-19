@@ -1,17 +1,20 @@
 package com.moon.sample.vo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import java.io.Serializable;
 
-public class Useres implements Serializable{
 
-    private String userid;
-    private String name;
-    private String nickname;
+public class Users implements Serializable{
 
-    public Useres() {
+     private String userid;
+     private String name;
+     private String nickname;
+
+    public Users() {
     }
 
-    public Useres(String userid, String name, String nickname) {
+    public Users(String userid, String name, String nickname) {
         this.userid = userid;
         this.name = name;
         this.nickname = nickname;
