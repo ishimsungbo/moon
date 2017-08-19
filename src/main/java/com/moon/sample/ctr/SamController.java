@@ -8,10 +8,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -48,7 +45,7 @@ public class SamController {
     }
 
     @ApiOperation(value = "보더가져오기",notes = "스웨거 Vo 샘플적용")
-    @RequestMapping(value = "getboardlist",method = RequestMethod.POST)
+    @RequestMapping(value = "getboardlist",method = RequestMethod.GET)
     public List<Board>  test(){
 
         /*
@@ -69,5 +66,12 @@ public class SamController {
         }
 
         return boards;
+    }
+
+    @ApiOperation(value = "RequestParam 넘기기",notes = "인터셉터 테스트")
+    @RequestMapping(value = "net",method = RequestMethod.GET)
+    public String net(@RequestParam String name){
+        logger.info("Controller : " + name.toString());
+        return "ok";
     }
 }

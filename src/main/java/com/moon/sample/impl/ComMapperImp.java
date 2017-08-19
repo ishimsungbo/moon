@@ -18,8 +18,6 @@ public class ComMapperImp implements ComMapper {
 
     @Override
     public List<Map<String, Object>> getUserMapList() {
-        logger.info("Sql Com service called 1");
-        logger.info("저를 call 했습니다...임플리먼트");
         return comMapper.getUserMapList();
     }
 

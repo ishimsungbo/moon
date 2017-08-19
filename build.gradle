@@ -27,9 +27,6 @@ dependencies {
 	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.6.1'
 	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.6.1'
 
-	compile('org.apache.poi:poi-ooxml:3.16') // .xlsx
-	compile('org.apache.poi:poi:3.16') // .xls
-
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '1.5.6.RELEASE'
 	testCompile group: 'junit', name: 'junit', version: '4.12'
 }
